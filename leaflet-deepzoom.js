@@ -75,8 +75,8 @@ L.TileLayer.DeepZoom = L.TileLayer.extend({
 		var tilePos = this._getTilePos(tilePoint),
 			tile = this._getTile(),
 			zoom = this._map.getZoom(),
-			imageSize = this._imageSize[zoom],
-			gridSize = this._gridSize[zoom],
+			imageSize = this._imageSize[this._getZoomForUrl()],
+			gridSize = this._gridSize[this._getZoomForUrl()],
 			tileSize = this.options.tileSize;
 
 		if (tilePoint.x === gridSize.x - 1) {
@@ -98,7 +98,7 @@ L.TileLayer.DeepZoom = L.TileLayer.extend({
 	},
 
 	getTileUrl: function(tilePoint) {
-		return this._url + this._map.getZoom() + '/' + tilePoint.x + '_' + tilePoint.y + '.' + this.options.imageFormat;
+		return this._url + this._getZoomForUrl() + '/' + tilePoint.x + '_' + tilePoint.y + '.' + this.options.imageFormat;
 	}
 
 });
