@@ -28,18 +28,19 @@
             height: 3000,
             tolerance: 0.8
         }).addTo(map);
+	
 		
 		//var southWest = new L.LatLng(map.unproject([0, 3120], map.getMaxZoom())),
         //    northEast = new L.LatLng(map.unproject([2080, 0], map.getMaxZoom())),
         //    bounds = new L.LatLngBounds(southWest, northEast);
-		var southWest = map.unproject([0, 3000], map.getMaxZoom()),
-            northEast = map.unproject([2400, 0], map.getMaxZoom()),
-            bounds = new L.LatLngBounds(southWest, northEast);
+	//	var southWest = map.unproject([0, 3000], map.getMaxZoom()),
+        //    northEast = map.unproject([2400, 0], map.getMaxZoom()),
+        //    bounds = new L.LatLngBounds(southWest, northEast);
 
 		// Restrict to bounds
 		//map.setMaxBounds(bounds);
 		// Fit bounds
-		map.fitBounds(bounds);
+	//	map.fitBounds(bounds);
 
     </script>
 </body>
