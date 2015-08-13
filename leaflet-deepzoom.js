@@ -31,7 +31,7 @@ L.TileLayer.DeepZoom = L.TileLayer.extend({
 		this._imageSize.reverse();
 		this._gridSize.reverse();
 
-        this.options.maxZoom = this._gridSize.length - 1;
+        this.options.maxNativeZoom = this._gridSize.length - 1;
 	},
 
 	onAdd: function (map) {
@@ -67,7 +67,7 @@ L.TileLayer.DeepZoom = L.TileLayer.extend({
 	},
 
 	_tileShouldBeLoaded: function (tilePoint) {
-		var gridSize = this._gridSize[this._map.getZoom()];
+		var gridSize = this._gridSize[this.options.maxNativeZoom];
 		return (tilePoint.x >= 0 && tilePoint.x < gridSize.x && tilePoint.y >= 0 && tilePoint.y < gridSize.y);
 	},
 
